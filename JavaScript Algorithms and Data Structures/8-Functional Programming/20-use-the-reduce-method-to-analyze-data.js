@@ -1,3 +1,5 @@
+// For the challenge : "Use the reduce Method to Analyze Data"
+
 // The global variable
 const watchList = [
   {
@@ -112,19 +114,32 @@ const watchList = [
   }
 ];
 
+/**
+ * Solution
+ * I use the reduce method
+ * 
+ * @param {*} watchList 
+ * @returns {Object}
+ */
 function getRating(watchList) {
-  // Only change code below this line
+
+  // Count the number of movies of Christopher Nolan
   let nb_movies = 0;
-  let averageRating = watchList.reduce((avr, movie) => {
+
+  // Use reduce to loop through the array
+  // Then check all the movies of Christopher Nolan
+  // Accumulate the imdbRating
+  return watchList.reduce((avr, movie) => {
     if(movie.Director === "Christopher Nolan"){
       nb_movies++;
       return avr + parseFloat(movie.imdbRating);
     }
-    return avr / nb_movies;
+
+    // Calculate the average
+    
+    return nb_movies > 0 ? avr / nb_movies : 0;
   }, 0);
 
-  // Only change code above this line
-  return averageRating;
 }
 
 console.log(getRating(watchList));
