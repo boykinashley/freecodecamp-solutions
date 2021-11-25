@@ -3,10 +3,11 @@
     $("#target1").css("color", "red");
     $("#target1").prop("disabled", true);
     $("#target4").remove();
+    $("#target2").appendTo("#right-well");
 
     // Solution
-    // Move this element to right-well
-    $("#target2").appendTo("#right-well");
+    // Clone "#target5", push it into "#left-well"
+    $("#target5").clone().appendTo("#left-well");
   });
 </script>
 
